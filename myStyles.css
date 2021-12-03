@@ -35,9 +35,25 @@ body {
 }
 
 .gameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 640px;
   height: 500px;
   margin: auto;
+  background: repeating-linear-gradient(
+    -45deg,
+    #fff,
+    #fff 10px,
+    #b30000 10px,
+    #b30000 20px
+  );
+}
+
+.gameContainer-inner {
+  width: 90%;
+  height: 90%;
+  background-color: #000;
 }
 
 .row {
@@ -47,6 +63,7 @@ body {
   justify-content: space-around;
   align-items: center;
   perspective: 1000px;
+  padding: 0 10px;
 }
 
 .card {
