@@ -14,6 +14,9 @@ score.innerHTML = count;
 const button = document.getElementById('button');
 button.addEventListener('click', resetGame);
 
+// Coin animation
+const coin = document.getElementById('coin');
+
 let endGameCount = 0;
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -111,8 +114,13 @@ function resetGame() {
     bestGuess.classList.remove('blink');
   }
 
+  coin.style.display = 'flex';
+  coin.classList.add('coin-animation');
+
   resetBoard();
   setTimeout(() => {
+    coin.classList.remove('coin-animation');
+    coin.style.display = 'none';
     shuffle();
   }, 400);
 }

@@ -12,7 +12,10 @@ body {
 #titleContainer {
   width: 50%;
   margin: auto;
-  background: linear-gradient(180deg, rgba(255,248,0,1) 0%, rgba(255,223,0,1) 54%, rgba(255,166,0,1) 100%);
+  background: linear-gradient(
+    180deg, rgba(255,248,0,1) 0%, 
+    rgba(255,223,0,1) 54%, 
+    rgba(255,166,0,1) 100%);
   padding: 20px;
 }
 
@@ -148,6 +151,7 @@ body {
 
 
 .button-container {
+  position: relative;
   display: flex;
   justify-content: center;
   padding: 25px;
@@ -172,25 +176,44 @@ body {
   transform: translateY(-10px);
 }
 
-/* .button-container button:before {
-  content: 'I';
+#coin {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.8rem;
   color: #000;
-  position: absolute;
-  top: 0;
-  left: 43%;
-  width: 15px;
+  top: 20px;
+  left: 49.3%;
+  width: 16px;
   height: 30px;
   background-color: #ffba26;
   border-radius: 50%;
   border: outset 1px #000;
-  z-index: -1;
-} */
+}
 
+.coin-animation {
+  animation: coin-spin .2s infinite, popup 1s ease;
+}
 
+@keyframes coin-spin {
+  0% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(-180deg);
+  }
+}
 
-/* .button-container button:active:before {
-  top: -38px;
-  transition: top .2s;
-} */
+@keyframes popup {
+  0% {
+    top: 20px;
+  }
+  50% {
+    top: -15px;
+  }
+  100% {
+    top: 20px;
+  }
+}
